@@ -1,0 +1,17 @@
+{
+	"name": "N5 100 Days",
+	"short_name": "N5 100",
+	"start_url": "./",
+	"scope": "./",
+	"display": "standalone",
+	"background_color": "#f7f7fb",
+	"theme_color": "#f7f7fb",
+	"icons": [
+		{
+			"src": "./assets/icons/app-icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		}
+	]
+}

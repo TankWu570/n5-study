@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant" data-bs-theme="light">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f7fb">
+<meta name="description" content="100 天漸進式 JLPT N5 自學工具，包含繁中解說、振假名、每日單字、發音、練習、複習與學習進度。">
+<title>N5 100 Days｜JLPT N5 自學</title>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icons/app-icon.svg" type="image/svg+xml">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./styles/app.css">
+</head>
+
+<body>
+	<header class="app-header sticky-top">
+		<nav class="navbar container-xl py-2" aria-label="主要導覽">
+			<button class="navbar-brand app-brand border-0 bg-transparent" data-route="home" aria-label="回到首頁">
+				<span class="app-brand__mark">日</span>
+				<span class="app-brand__copy">
+					<strong>N5 100 Days</strong>
+					<small>JLPT N5 · 100 天漸進學習</small>
+				</span>
+			</button>
+
+			<div class="desktop-nav d-none d-lg-flex align-items-center gap-1 ms-auto">
+				<button class="desktop-nav__item" data-route="home">首頁</button>
+				<button class="desktop-nav__item" data-route="lesson">每日課程</button>
+				<button class="desktop-nav__item" data-route="vocabulary">單字</button>
+				<button class="desktop-nav__item" data-route="review">複習</button>
+				<button class="desktop-nav__item" data-route="progress">100 天</button>
+				<button class="desktop-nav__item" data-route="settings"><i class="bi bi-gear me-1"></i>設定</button>
+			</div>
+
+			<button id="install-app-button" class="btn btn-outline-secondary btn-sm d-none ms-auto">安裝</button>
+		</nav>
+	</header>
+
+	<main id="app-content" class="container-xl py-3 py-lg-5"></main>
+
+	<nav class="mobile-nav d-lg-none" aria-label="手機導覽">
+		<button data-route="home"><i class="bi bi-house-door"></i><small>首頁</small></button>
+		<button data-route="lesson"><i class="bi bi-journal-text"></i><small>課程</small></button>
+		<button data-route="vocabulary"><i class="bi bi-translate"></i><small>單字</small></button>
+		<button data-route="review"><i class="bi bi-arrow-repeat"></i><small>複習</small></button>
+		<button data-route="settings"><i class="bi bi-gear"></i><small>設定</small></button>
+	</nav>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script type="module" src="./scripts/app.js"></script>
+</body>
+</html>
