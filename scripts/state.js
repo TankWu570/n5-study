@@ -1,5 +1,5 @@
-import { todayKey } from './utils.js';
 
+import { todayKey } from './utils.js';
 const STORAGE_KEY = 'n5-study-progress';
 
 export function createDefaultState() {

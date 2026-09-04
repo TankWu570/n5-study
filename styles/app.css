@@ -30,36 +30,43 @@
 html { background: var(--app-bg); }
 body { min-height: 100vh; padding-bottom: 96px; background: radial-gradient(circle at 8% 2%, rgba(233, 99, 85, .08), transparent 25rem), radial-gradient(circle at 92% 15%, rgba(89, 105, 216, .07), transparent 23rem), var(--app-bg); color: var(--ink); letter-spacing: .005em; }
 button { touch-action: manipulation; }
+
 #app-content { max-width: 1180px; }
 
-/* Layout & shared UI */
+/* header */
 .app-header { min-height: 76px; background: rgba(247, 247, 251, .82) !important; backdrop-filter: blur(22px) saturate(150%); -webkit-backdrop-filter: blur(22px) saturate(150%); border-bottom: 1px solid rgba(226, 228, 237, .75); }
 .app-header .container-xl { max-width: 1180px; }
 .app-brand { margin: 0; color: var(--ink); display: flex; align-items: center; gap: .65rem; text-align: left; }
 .app-brand__mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 15px; color: white; font-weight: 800; font-size: 1.18rem; background: linear-gradient(145deg, #f27768, #df5448); box-shadow: 0 9px 24px rgba(233, 99, 85, .25); }
 .app-brand__copy small { color: var(--muted); font-size: .72rem; }
+
 .desktop-nav__item { border: 0; background: transparent; color: #666c7d; border-radius: 12px; font-size: .91rem; font-weight: 600; transition: .18s ease; }
 .desktop-nav__item:hover, .desktop-nav__item.active { background: white; color: var(--ink); box-shadow: 0 4px 16px rgba(30, 36, 55, .06); }
+
 .btn { border-radius: 12px; font-weight: 600; }
 .btn-primary { --bs-btn-bg: var(--primary); --bs-btn-border-color: var(--primary); --bs-btn-hover-bg: var(--primary-dark); --bs-btn-hover-border-color: var(--primary-dark); --bs-btn-active-bg: var(--primary-dark); --bs-btn-active-border-color: var(--primary-dark); box-shadow: 0 8px 20px rgba(233, 99, 85, .17); }
 .btn-outline-primary { --bs-btn-color: var(--primary); --bs-btn-border-color: #efb5ae; --bs-btn-hover-bg: var(--primary-soft); --bs-btn-hover-color: var(--primary-dark); --bs-btn-hover-border-color: #e99d94; --bs-btn-active-bg: var(--primary-soft); --bs-btn-active-color: var(--primary-dark); }
 .btn-soft { background: #f1f2f7; border-color: #f1f2f7; color: #4c5263; }
 .btn-soft:hover { background: #e9eaf1; border-color: #e9eaf1; color: #303544; }
+
 .app-card { background: rgba(255, 255, 255, .94); border: 1px solid rgba(226, 228, 236, .9); border-radius: 24px; box-shadow: var(--shadow); }
+
 .section-kicker { font-size: .69rem; letter-spacing: .13em; font-weight: 800; color: #9095a5; }
 .section-title { font-weight: 800; letter-spacing: -.025em; color: var(--ink); }
 .section-number { display: inline-grid; place-items: center; min-width: 34px; height: 28px; padding: 0 8px; margin-right: 6px; border-radius: 9px; background: var(--primary-soft); color: var(--primary); font-size: .74rem; vertical-align: 2px; }
 
-/* navigation */
+/* mobile-nav */
 .mobile-nav { position: fixed; left: 12px; right: 12px; bottom: 10px; z-index: 1040; min-height: 70px; padding: 6px calc(4px + env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) calc(4px + env(safe-area-inset-left)); display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid rgba(221, 223, 231, .88); border-radius: 23px; background: rgba(255, 255, 255, .94); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); box-shadow: 0 15px 42px rgba(31, 36, 54, .15); }
 .mobile-nav button { border: 0; background: none; color: #858a98; display: grid; place-content: center; gap: 2px; border-radius: 15px; min-height: 52px; }
 .mobile-nav i { font-size: 1.08rem; }
 .mobile-nav small { font-size: .63rem; font-weight: 600; }
 .mobile-nav button.active { color: var(--primary); background: var(--primary-soft); }
+
 .app-brand__copy strong, .app-brand__copy small { display: block; }
+
 .desktop-nav__item { padding: .6rem .8rem; }
 
-/* home */
+/* hero */
 .hero { position: relative; overflow: hidden; padding: 32px; border-radius: 30px; background: linear-gradient(135deg, #333c67 0%, #515f9d 48%, #e46d67 125%); color: white; box-shadow: 0 22px 60px rgba(49, 57, 99, .20); }
 .hero-art { position: absolute; border-radius: 999px; filter: blur(.1px); pointer-events: none; }
 .hero-art-one { width: 330px; height: 330px; right: -120px; top: -180px; background: rgba(255, 255, 255, .10); }
@@ -97,7 +104,9 @@ button { touch-action: manipulation; }
 .step-icon { width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; border-radius: 11px; background: white; color: #747b8d; border: 1px solid var(--line); }
 .progress-step small { display: block; font-size: .6rem; letter-spacing: .08em; color: #9a9eaa; }
 .progress-step b { display: block; font-size: .84rem; margin-top: 1px; }
+
 .step-state { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: #eceef4; color: #818697; font-size: .72rem; font-weight: 800; }
+
 .progress-step.done { background: var(--mint-soft); border-color: #cee9df; }
 .progress-step.done .step-icon, .progress-step.done .step-state { background: var(--mint); border-color: var(--mint); color: white; }
 
@@ -118,9 +127,7 @@ button { touch-action: manipulation; }
 .lesson-pattern-preview { font-family: "Noto Sans JP"; color: var(--indigo); font-size: 1rem; }
 .support-badge { display: inline-flex; align-items: center; gap: .35rem; padding: .38rem .62rem; border-radius: 999px; background: #f6f6f9; border: 1px solid #e9e9ef; color: #707686; font-size: .69rem; font-weight: 600; }
 .learning-goal { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 16px; background: var(--amber-soft); border: 1px solid #f3e5b8; }
-
 .goal-icon { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 11px; background: #fff3cf; color: #a77825; }
-
 .learning-goal small { display: block; color: #958159; font-size: .68rem; font-weight: 700; }
 .learning-goal b { display: block; font-size: .92rem; margin-top: 2px; }
 .lesson-section { position: relative; }
@@ -130,7 +137,6 @@ button { touch-action: manipulation; }
 .vocab-section { border-top: 4px solid var(--mint); }
 
 .practice-section { border-top: 4px solid var(--indigo); }
-
 .pattern-box { border: 0; border-radius: 18px; padding: 18px !important; background: linear-gradient(135deg, var(--primary-soft), #fff7f5); }
 .pattern-text { font-family: "Noto Sans JP"; font-size: clamp(1.25rem, 4vw, 1.65rem); font-weight: 700; line-height: 1.8; }
 
@@ -201,17 +207,14 @@ rt { font-size: .5em; font-weight: 500; color: #d05e52; letter-spacing: .02em; }
 .quiz-card-head b { font-size: .77rem; color: #747a8a; }
 .quiz-question { font-family: "Noto Sans JP", "Noto Sans TC"; font-size: 1rem; line-height: 1.75; }
 .quiz-option { display: flex; align-items: center; gap: 10px; }
-
 .option-letter { width: 27px; height: 27px; flex: 0 0 27px; display: grid; place-items: center; border-radius: 8px; background: #f1f2f6; color: #73798a; font-size: .68rem; font-weight: 800; }
-
 .quiz-option.selected .option-letter { background: var(--indigo); color: white; }
 .quiz-option.correct .option-letter { background: var(--mint); color: white; }
 .quiz-option.wrong .option-letter { background: var(--primary); color: white; }
 .quiz-explain { font-size: .86rem; background: #f6f7fa; border-radius: 12px; padding: 11px 12px; margin-top: 12px; line-height: 1.65; }
-
 .submit-sticky { position: sticky; bottom: 86px; z-index: 20; padding: 10px 0; background: linear-gradient(transparent, var(--app-bg) 28%); }
 
-/* other pages */
+/* day grid */
 .day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .day-btn { min-height: 52px; border: 1px solid var(--line); border-radius: 13px; background: white; color: #5e6474; font-weight: 700; }
 .day-btn.done { background: var(--mint-soft); border-color: #c5e4d8; color: #37755f; }

@@ -1,4 +1,4 @@
-import { vocabulary } from '../data/index.js';
+import { lessons, vocabulary } from '../data/index.js';
 import { createDefaultState, exportState, loadState, readStateFile, recordStudyDate, saveState } from './state.js';
 import { speakJapanese } from './speech.js';
 import { escapeHtml, showToast, todayKey } from './utils.js';
@@ -161,10 +161,21 @@ function submitQuiz() {
 	showToast(passed ? `通過：${score}/${activeQuiz.length}` : `${score}/${activeQuiz.length}，至少 ${passScore} 題才通過`);
 }
 
+function learnedVocabulary(day) {
+	const learned = new Map();
+	for (const lesson of lessons.slice(0, day)) {
+		for (const word of lesson.vocabulary) {
+			if (word.kind === 'new') learned.set(wordKey(word), word);
+		}
+	}
+	return [...learned.values()];
+}
+
 function filterVocabulary(query) {
+	const learned = learnedVocabulary(state.currentDay);
 	let list = vocabularyFilter === 'today' ? lessonForDay(state.currentDay).vocabulary
-		: vocabularyFilter === 'weak' ? vocabulary.filter((word) => (state.vocab[wordKey(word)] || 0) < 2)
-			: vocabularyFilter === 'known' ? vocabulary.filter((word) => (state.vocab[wordKey(word)] || 0) >= 2)
+		: vocabularyFilter === 'weak' ? learned.filter((word) => (state.vocab[wordKey(word)] || 0) < 2)
+			: vocabularyFilter === 'known' ? learned.filter((word) => (state.vocab[wordKey(word)] || 0) >= 2)
 				: vocabulary;
 
 	const keyword = query.trim().toLowerCase();

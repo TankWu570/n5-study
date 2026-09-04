@@ -2,6 +2,8 @@
 
 以 100 天為週期設計的 JLPT N5 自學工具。課程從基本句型開始，逐步加入單句理解、短文、聽解與 N5 題型；學習進度保存在使用者自己的瀏覽器，不需要帳號或後端服務。
 
+[Live Demo](https://tankwu570.github.io/n5-study/)
+
 ## Features
 
 - 100 天漸進式課程
@@ -17,7 +19,7 @@
 
 ## Learning design
 
-課程不是從第一天直接套用完整 JLPT 題型，而是依能力逐步增加負荷：
+課程不從第一天直接套用完整 JLPT 題型，而是依能力逐步增加負荷：
 
 | Days | Focus |
 | --- | --- |
@@ -27,9 +29,15 @@
 | 31–50 | 短文與短對話 |
 | 51–70 | N5 讀解／聽解題型導入 |
 | 71–90 | N5 題型混合訓練 |
-| 91–100 | 模擬與弱點整理 |
+| 91–100 | 模擬題組與弱點整理 |
 
 教材區依階段提供振假名；每日練習與測驗固定不顯示振假名，讓提示與實際辨認分開。
+
+## Data design
+
+核心詞彙只在 `vocabulary.js` 維護一次；每天的新字與複習安排放在 `vocabulary-plan.js`。課程檔只保留文法、例句、說明與後期模擬素材，避免在 100 天教材中重複存放相同單字資料。
+
+`tools/validate-curriculum.mjs` 會檢查課程天數、每日單字數、新字／複習順序、重複選項、答案索引與 Day 91–100 模擬資料，避免教材調整後破壞資料一致性。
 
 ## Tech
 
@@ -51,6 +59,7 @@ n5-study/
 ├─ data/
 │  ├─ curriculum.js
 │  ├─ vocabulary.js
+│  ├─ vocabulary-plan.js
 │  └─ lessons/
 ├─ scripts/
 │  ├─ app.js
@@ -62,15 +71,18 @@ n5-study/
 │  └─ views.js
 ├─ styles/
 │  └─ app.css
+├─ tools/
+│  └─ validate-curriculum.mjs
+├─ package.json
 ├─ manifest.webmanifest
 └─ sw.js
 ```
 
-教材資料與 JavaScript 依職責分開維護；樣式集中在單一 `app.css`，包含共用樣式與 RWD 規則，方便直接維護與查找。
+教材資料與 JavaScript 依職責分開維護；樣式集中在單一 `app.css`，包含共用樣式與 RWD 規則。
 
 ## Why no backend?
 
-這個專案最初是兩位使用者的自學工具。沒有跨裝置同步與多人資料管理需求，因此採用純前端架構，進度儲存在各自裝置；需要換裝置時可匯出 JSON 備份。若未來增加帳號同步，再將狀態層改接 API 即可，不需要重寫教材與介面。
+這個專案最初是兩位使用者的自學工具。沒有跨裝置同步與多人資料管理需求，因此採用純前端架構，進度儲存在各自裝置；需要換裝置時可匯出 JSON 備份。若未來增加帳號同步，可將狀態層改接 API，不需要重寫教材與介面。
 
 ## Curriculum references
 

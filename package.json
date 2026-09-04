@@ -1,0 +1,8 @@
+{
+	"name": "n5-study",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"validate": "node tools/validate-curriculum.mjs"
+	}
+}

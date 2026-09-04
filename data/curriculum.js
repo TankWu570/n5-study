@@ -94,9 +94,9 @@ export const curriculum = {
 			"from": 91,
 			"to": 99,
 			"name": "模擬衝刺",
-			"short": "限時題組",
+			"short": "模擬題組",
 			"quizCount": 24,
-			"description": "接近正式 N5 題型，降低振假名與中文提示，進行限時短題組。"
+			"description": "接近正式 N5 題型，降低振假名與中文提示，集中練習讀解、聽解與綜合題型。"
 		},
 		{
 			"id": "final",
